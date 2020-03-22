@@ -1,0 +1,24 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Tên</th>
+        <th scope="col">Tiền</th>
+        <th scope="col">Giới thiệu</th>
+        <th scope="col">Ảnh</th>
+        <th scope="col">Stocks</th>
+        <!-- <th scope="col">Action</th> -->
+        <th scope="col">Chọn</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let product of products">
+      <tr>
+        <td>{{product.name}}</td>
+        <td>${{product.price}}</td>
+        <td>{{product.desc}}</td>
+        <td><img class="card-img-top" [src]="product.img" alt=""></td>
+        <td>{{product.status ? 'In stock': 'Out stock'}}</td>
+        <!-- <td><button class="btn btn-primary" (click)="removeItem(product.id)">Delete</button></td> -->
+        <td><button class="btn btn-primary" (click)="showDetail(product)">Click me!</button></td>
+      </tr>
+    </tbody>
+  </table>
